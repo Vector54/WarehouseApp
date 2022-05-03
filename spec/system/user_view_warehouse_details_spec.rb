@@ -17,4 +17,16 @@ describe 'Usuário aperta no galpão' do
     expect(page).to have_content('Descrição: Galpão do aeroporto de Guarulhos.')
 
   end
+  
+  it 'e volta para a home_view' do
+    Warehouse.create(name: 'galpão-SP', city: 'Guarulhos', city_code: 'GRU', area: 100_000,
+                      adress: 'Avenida Aeroporto, 1000', cep: '15000-000', 
+                      description: 'Galpão do aeroporto de Guarulhos.')
+
+    visit('/')
+    click_on('galpão-SP')
+    click_on('Voltar')
+
+    expect(current_path).to eq('/')
+  end
 end
