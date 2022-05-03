@@ -5,7 +5,7 @@
   Cidade: <%= w.city%>
   Código: <%= w.city_code%>
   <%= w.area%> m²
-  <%= w.name%>
+  <%= link_to(w.name, warehouse_path(w.id))%>
 <%end%>
 
 <%if @warehouses.empty?%>
