@@ -1,10 +1,21 @@
-<h>Detalhes do galpão: <%= @warehouse.name%></h>
+<h1>Detalhes do galpão: <strong><%= @warehouse.name%></strong></h1>
+<h2><strong>Descrição: </strong><%= @warehouse.description%></h2>
+
 <div>
-  <strong>Cidade: </strong><%= @warehouse.city%>
-  <strong>Código: </strong><%= @warehouse.city_code%>
-  <strong>Área: </strong><%= @warehouse.area%> m²
-  <strong>Endereço: </strong><%= @warehouse.adress%> ; <strong>CEP: </strong><%=@warehouse.cep%>
-  <strong>Descrição: </strong><%= @warehouse.description%>
+    <dl>
+      <dt><strong>Cidade:</strong></dt>
+      <dd><%= @warehouse.city%></dd>
+
+      <dt><strong>Código:</strong></dt>
+      <dd><%= @warehouse.city_code%></dd>
+
+      <dt><strong>Área: </strong></dt>
+      <dd><%= @warehouse.area%> m²</dd>
+      
+      <dt><strong>Endereço: </strong></dt>
+      <dd><%= @warehouse.adress%> ; <strong>CEP: </strong><%=@warehouse.cep%></dd>
+    </dl>
+  
   <a href='/'>Voltar</a>
 
 </div>
