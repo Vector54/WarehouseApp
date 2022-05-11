@@ -1,9 +1,9 @@
 <h2>Cadastrar Galpão</h2>
 
-<%= form_with(model: Warehouse.new) do |w|%>
+<%= form_with(model: @warehouse) do |w|%>
   <div>
     <%= w.label :name, "Nome"%>
-    <%= w.text_field :name%>
+    <%= w.text_field :name %>
   </div>
   <div>
     <%= w.label :city, "Cidade"%>
@@ -11,7 +11,7 @@
   </div>
   <div>
     <%= w.label :city_code, "Código"%>
-    <%= w.text_field :city_code%>
+    <%= w.text_field :city_code %>
   </div>
   <div>
     <%= w.label :area, "Área"%>
@@ -31,3 +31,7 @@
   </div>
   <%= w.submit 'Enviar'%>
 <% end%>
+
+<div>
+<%= link_to('Voltar', root_path)%>
+</div>

@@ -14,6 +14,14 @@ describe 'Usuário quer registrar um galpão' do
     expect(page).to have_field('Descrição')
   end
 
+  it 'e volta para página inicial' do
+    visit root_path
+    click_on 'Cadastrar Galpão'
+    click_on 'Voltar'
+    
+    expect(current_path).to eq(root_path)
+  end
+
   it 'e realiza o cadastro' do 
     visit root_path
     click_on 'Cadastrar Galpão'
@@ -27,6 +35,22 @@ describe 'Usuário quer registrar um galpão' do
     click_on 'Enviar'
 
     expect(current_path).to eq(root_path)
+    expect(page).to have_content('Galpão cadastrado com sucesso.')
     expect(page).to have_content('CPZ')
+  end
+
+  it 'e informa erro de cadastro.' do
+    visit root_path
+    click_on 'Cadastrar Galpão'
+    fill_in "Nome", with: ""
+    fill_in "Cidade", with: ""
+    fill_in "Código", with: ""
+    fill_in "Área", with: ''
+    fill_in "Endereço", with: ""
+    fill_in "CEP", with: ""
+    fill_in "Descrição", with: ""
+    click_on 'Enviar'
+
+    expect(page).to have_content('Galpão não cadastrado.')
   end
 end

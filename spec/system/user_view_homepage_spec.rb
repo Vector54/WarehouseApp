@@ -4,12 +4,14 @@ describe 'Usuário vê a tela inicial' do
   it 'e vê o nome do app' do
     visit('/')
 
-    expect(page).to have_content('Galpões & Estoque')
+    expect(page).to have_content('Sistema de Galpões e Estoque')
   end
 
   it 'e vê os galpões cadastrados' do 
-		Warehouse.create(city: 'Rio de Janeiro', city_code: 'SDU', name: 'Rio', area: 50_000 )
-		Warehouse.create(city: 'Maceió', city_code: 'MCZ', name: 'Maceió', area: 60_000 )
+		Warehouse.create(city: 'Rio de Janeiro', city_code: 'SDU', name: 'Rio', area: 50_000,
+						adress: 'Tietetzsion, 6548', cep: '64859-868', description: 'Fica dentro do Rio.')
+		Warehouse.create(city: 'Maceió', city_code: 'MCZ', name: 'Maceió', area: 60_000,
+						adress: 'altlancio, 68486', cep: '68435-864', description: 'Seila bicho' )
 
 		visit('/')
 
