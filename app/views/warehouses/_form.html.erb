@@ -1,0 +1,35 @@
+<%= form_with(model: @warehouse) do |w|%>
+  <div>
+    <%= w.label :name, "Nome"%>
+    <%= w.text_field :name %>
+  </div>
+  <div>
+    <%= w.label :city, "Cidade"%>
+    <%= w.text_field :city%>
+  </div>
+  <div>
+    <%= w.label :city_code, "Código"%>
+    <%= w.text_field :city_code %>
+  </div>
+  <div>
+    <%= w.label :area, "Área"%>
+    <%= w.number_field :area%>
+  </div>
+  <div>
+    <%= w.label :adress, "Endereço"%>
+    <%= w.text_field :adress%>
+  </div>
+  <div>
+    <%= w.label :cep, "CEP"%>
+    <%= w.text_field :cep%>
+  </div>
+  <div>
+    <%= w.label :description, "Descrição"%>
+    <%= w.text_area :description%>
+  </div>
+  <%= w.submit 'Enviar'%>
+<% end%>
+
+<div>
+<%= link_to('Voltar', root_path)%>
+</div>

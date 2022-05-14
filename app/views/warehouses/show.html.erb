@@ -15,7 +15,10 @@
       <dt><strong>Endereço: </strong></dt>
       <dd><%= @warehouse.adress%> ; <strong>CEP: </strong><%=@warehouse.cep%></dd>
     </dl>
-  
+  <p>
   <a href='/'>Voltar</a>
-
+  </p>
+  <p>
+  <%= link_to('Editar Galpão', edit_warehouse_path(@warehouse.id))%>
+  </p>
 </div>
