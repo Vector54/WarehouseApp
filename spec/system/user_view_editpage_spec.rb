@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Usuário quer editar um galpão' do
   it 'e vê a página de edição' do
-    w = Warehouse.create!(name: 'galpão-SP', city: 'Guarulhos', city_code: 'GRU', area: 100_000,
+    Warehouse.create!(name: 'galpão-SP', city: 'Guarulhos', city_code: 'GRU', area: 100_000,
                           adress: 'Avenida Aeroporto, 1000', cep: '15000-000', 
                           description: 'Galpão do aeroporto de Guarulhos.')
 
