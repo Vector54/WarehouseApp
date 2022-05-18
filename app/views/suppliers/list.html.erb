@@ -1,0 +1,21 @@
+<h2>Fornecedores</h2>
+
+<div>
+  <% @supplierlist.each do |s| %>
+    <p>
+    <b>Fornecedor: <%= link_to(s.name, supplier_path(s.id))  %></b>
+    </p>
+    <p>
+    CNPJ: <%= s.cnpj%>
+    </p>
+    <p>
+    e-mail: <%= s.email%>
+    </p>
+  <%end%>
+  <% if @supplierlist.empty?%>
+    Não há fornecedores.
+  <%end%>
+</div>
+<div>
+  <%= link_to('Cadastrar novo fornecedor.', new_supplier_path)%>
+</div>

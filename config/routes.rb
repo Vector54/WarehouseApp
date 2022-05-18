@@ -2,4 +2,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'home#index'
   resources :warehouses, only: [:show, :new, :create, :edit, :update, :destroy]
+  get 'supplierlist', to: 'suppliers#list'
+  resources :suppliers, only: [:show, :new, :create, :edit, :update]
 end

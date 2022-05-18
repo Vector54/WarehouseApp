@@ -1,0 +1,27 @@
+<%= form_with(model: @supplier) do |s|%>
+  <div>
+    <%= s.label :name, "Nome"%>
+    <%= s.text_field :name %>
+  </div>
+  <div>
+    <%= s.label :corporate_name, "Razão social"%>
+    <%= s.text_field :corporate_name%>
+  </div>
+  <div>
+    <%= s.label :cnpj, "CNPJ"%>
+    <%= s.text_field :cnpj %>
+  </div>
+  <div>
+    <%= s.label :email, "e-mail"%>
+    <%= s.text_field :email%>
+  </div>
+  <div>
+    <%= s.label :adress, "Endereço"%>
+    <%= s.text_field :adress%>
+  </div>
+  <div>
+    <%= s.label :phone, "Telefone"%>
+    <%= s.text_field :phone%>
+  </div>
+  <%= s.submit 'Enviar'%>
+<% end%>
