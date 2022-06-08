@@ -1,5 +1,5 @@
 class SuppliersController < ApplicationController
-  def list
+  def index 
     @supplierlist = Supplier.all    
   end 
 
@@ -18,7 +18,7 @@ class SuppliersController < ApplicationController
     @supplier = Supplier.new(supplier_params)
     
     if @supplier.save()
-      redirect_to '/supplierlist', notice: 'Fornecedor cadastrado com sucesso.'
+      redirect_to suppliers_path, notice: 'Fornecedor cadastrado com sucesso.'
     else
       flash.now[:notice] = 'Falha ao cadastrar o fornecedor.'
     end
