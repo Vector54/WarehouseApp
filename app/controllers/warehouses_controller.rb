@@ -24,14 +24,14 @@ class WarehousesController < ApplicationController
     if @warehouse.update(warehouse_params)
       redirect_to warehouse_path(@warehouse.id), notice: 'Galpão atualizado com sucesso'
     else
-      flash.now[:notice] = 'Falha na atualização'
+      flash.now[:notice] = 'Atualização falhou.'
       render 'edit'
     end
   end
 
   def destroy
     @warehouse.destroy
-    redirect_to root_path, notice: 'Uma coisa diferente.'
+    redirect_to root_path, notice: 'Galpão foi demolido com sucesso.'
   end
 
   private 
